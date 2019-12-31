@@ -1,0 +1,10 @@
+version: "3"
+services:
+  kindle:
+    build: .
+    environment:
+      - "DISPLAY=${DISPLAY}"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./wineuser:/home/wineuser
+    command: wine '/home/wineuser/.wine/drive_c/Program Files (x86)/Amazon/Kindle/Kindle.exe'
